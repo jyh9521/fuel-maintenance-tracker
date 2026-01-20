@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚗 燃油与保养追踪器 (Fuel & Maintenance Tracker)
 
-## Getting Started
+[English](README_EN.md) | [日本語](README_JA.md) | [中文](README.md)
 
-First, run the development server:
+一个现代化的 Web 应用程序，用于管理您的车辆、追踪燃油消耗以及预测保养需求。
+
+![App Screenshot](public/screenshot.png)
+
+## ✨ 主要功能
+
+*   **多车辆管理**：支持添加多辆车，涵盖汽车、摩托车和三轮车等多种类型。
+*   **燃油记录**：轻松记录加油详情（里程、升数、价格、是否加满）。
+*   **智能统计**：自动计算平均油耗 (L/100km)、每公里成本和总行驶里程。
+*   **保养预测**：基于您的驾驶习惯，智能预测下一次保养日期。
+*   **加油站查找**：集成地图功能，快速查找附近的加油站。
+*   **多语言支持**：原生支持中文、日语和英语。
+*   **移动端适配**：响应式设计，完美适配手机和桌面设备 (Material Design 3)。
+
+## 🛠️ 技术栈
+
+*   **框架**: [Next.js 16](https://nextjs.org/) (App Router)
+*   **数据库**: [Prisma](https://www.prisma.io/) (SQLite)
+*   **样式**: [TailwindCSS](https://tailwindcss.com/) + CSS Modules (Material Design 3 风格)
+*   **地图**: [Leaflet](https://leafletjs.com/) + OpenStreetMap
+*   **部署**: Docker 支持
+
+## 🚀 快速开始
+
+### 本地开发
+
+1.  **克隆仓库**
+    ```bash
+    git clone https://github.com/yourusername/fuel-maintenance-tracker.git
+    cd fuel-maintenance-tracker
+    ```
+
+2.  **安装依赖**
+    ```bash
+    npm install
+    ```
+
+3.  **初始化数据库**
+    ```bash
+    npx prisma migrate dev
+    ```
+
+4.  **启动开发服务器**
+    ```bash
+    npm run dev
+    ```
+    访问 `http://localhost:3000`。
+
+### 🐳 Docker 部署
+
+我们提供了详细的 [Docker 部署指南](DEPLOY.md)。
+
+简易命令：
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+docker build -t fuel-tracker .
+docker run -d -p 9521:9521 -v ./data:/app/prisma/db fuel-tracker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📂 项目结构
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/              # Next.js App Router 页面
+├── components/       # React UI 组件
+├── lib/              # 工具函数 (计算逻辑, 数据库, i18n)
+└── ...
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 贡献
 
-## Learn More
+欢迎提交 Pull Request 或 Issue！
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 许可证
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License

@@ -1,0 +1,16 @@
+{
+    "name": "Fuel & Maintenance Tracker",
+    "short_name": "FuelTracker",
+    "icons": [
+        {
+            "src": "/globe.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml"
+        }
+    ],
+    "theme_color": "#0f172a",
+    "background_color": "#0f172a",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/"
+}

@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: fuel-tracker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fuel-tracker:latest
+    ports:
+      - "9521:9521"
+    environment:
+      - DATABASE_URL=file:/app/prisma/dev.db
+    volumes:
+      - ./prisma/dev.db:/app/prisma/dev.db
+    restart: unless-stopped
+    networks:
+      - fuel-net
+
+networks:
+  fuel-net:
+    driver: bridge
