@@ -4,7 +4,13 @@
 
 一个现代化的 Web 应用程序，用于管理您的车辆、追踪燃油消耗以及预测保养需求。
 
-![App Screenshot](public/screenshot.png)
+## 📸 应用截图
+
+<p align="center">
+  <img src="public/screenshot1.png" width="30%" />
+  <img src="public/screenshot2.png" width="30%" />
+  <img src="public/screenshot3.png" width="30%" />
+</p>
 
 ## ✨ 主要功能
 

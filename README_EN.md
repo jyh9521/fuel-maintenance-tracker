@@ -4,7 +4,13 @@
 
 A modern web application for managing your garage, tracking fuel consumption, and predicting maintenance needs.
 
-![App Screenshot](public/screenshot.png)
+## 📸 Screenshots
+
+<p align="center">
+  <img src="public/screenshot1.png" width="30%" />
+  <img src="public/screenshot2.png" width="30%" />
+  <img src="public/screenshot3.png" width="30%" />
+</p>
 
 ## ✨ Key Features
 

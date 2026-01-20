@@ -4,7 +4,13 @@
 
 車両の管理、燃費の追跡、およびメンテナンス時期の予測を行うためのモダンなWebアプリケーションです。
 
-![App Screenshot](public/screenshot.png)
+## 📸 アプリのスクリーンショット
+
+<p align="center">
+  <img src="public/screenshot1.png" width="30%" />
+  <img src="public/screenshot2.png" width="30%" />
+  <img src="public/screenshot3.png" width="30%" />
+</p>
 
 ## ✨ 主な機能
 
