@@ -1,6 +1,6 @@
 # Docker 部署指南
 
-[English](DEPLOY_EN.md) | [日本語](DEPLOY_JA.md) | [中文](DEPLOY.md)
+[中文](DEPLOY.md) | [日本語](DEPLOY_JA.md) | [English](DEPLOY_EN.md)
 
 本指南介绍如何将您的燃油与保养追踪应用程序打包并发布到 Docker Hub，以便部署到您的 NAS 或其他服务器上。
 

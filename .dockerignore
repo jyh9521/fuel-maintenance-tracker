@@ -5,3 +5,8 @@ npm-debug.log
 README.md
 .next
 .git
+*.db
+*.db-journal
+build-log.txt
+build-detailed.log
+Dockerfile.simple

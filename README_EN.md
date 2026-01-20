@@ -1,6 +1,6 @@
 # 🚗 Fuel & Maintenance Tracker
 
-[English](README_EN.md) | [日本語](README_JA.md) | [中文](README.md)
+[中文](README.md) | [日本語](README_JA.md) | [English](README_EN.md)
 
 A modern web application for managing your garage, tracking fuel consumption, and predicting maintenance needs.
 

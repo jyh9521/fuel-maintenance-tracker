@@ -1,6 +1,6 @@
 # 🚗 燃油与保养追踪器 (Fuel & Maintenance Tracker)
 
-[English](README_EN.md) | [日本語](README_JA.md) | [中文](README.md)
+[中文](README.md) | [日本語](README_JA.md) | [English](README_EN.md)
 
 一个现代化的 Web 应用程序，用于管理您的车辆、追踪燃油消耗以及预测保养需求。
 

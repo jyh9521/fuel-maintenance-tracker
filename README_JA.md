@@ -1,6 +1,6 @@
 # 🚗 燃費・メンテナンス・トラッカー (Fuel & Maintenance Tracker)
 
-[English](README_EN.md) | [日本語](README_JA.md) | [中文](README.md)
+[中文](README.md) | [日本語](README_JA.md) | [English](README_EN.md)
 
 車両の管理、燃費の追跡、およびメンテナンス時期の予測を行うためのモダンなWebアプリケーションです。
 

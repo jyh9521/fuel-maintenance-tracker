@@ -1,0 +1,283 @@
+﻿docker : #0 building with "
+desktop-linux" instance usi
+ng docker driver
+発生場所 行:1 文字:1
++ docker build --no-cache -
+-progress=plain -t jyh9521/
+fuel-tracker:late ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (#0   
+  building wit...g docke   
+ r driver:String) [], R    
+emoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+
+#1 [internal] load build de
+finition from Dockerfile
+#1 DONE 0.0s
+
+#1 [internal] load build de
+finition from Dockerfile
+#1 transferring dockerfile:
+ 2.55kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata
+ for docker.io/library/node
+:18-alpine
+#2 DONE 0.4s
+
+#3 [internal] load .dockeri
+gnore
+#3 transferring context: 12
+0B done
+#3 DONE 0.0s
+
+#4 [base 1/1] FROM docker.i
+o/library/node:18-alpine@sh
+a256:8d6421d663b4c28fd3ebc4
+98332f249011d118945588d0a35
+cb9bc4b8ca09d9e
+#4 resolve docker.io/librar
+y/node:18-alpine@sha256:8d6
+421d663b4c28fd3ebc498332f24
+9011d118945588d0a35cb9bc4b8
+ca09d9e 0.0s done
+#4 CACHED
+
+#5 [builder 1/5] WORKDIR /a
+pp
+#5 CACHED
+
+#6 [internal] load build co
+ntext
+#6 transferring context: 3.
+64kB done
+#6 DONE 0.0s
+
+#7 [deps 1/4] RUN apk add -
+-no-cache libc6-compat
+#7 ...
+
+#8 [runner 2/9] RUN addgrou
+p --system --gid 1001 nodej
+s
+#8 DONE 0.3s
+
+#9 [runner 3/9] RUN adduser
+ --system --uid 1001 nextjs
+#9 DONE 0.5s
+
+#7 [deps 1/4] RUN apk add -
+-no-cache libc6-compat
+#7 0.273 fetch https://dl-c
+dn.alpinelinux.org/alpine/v
+3.21/main/x86_64/APKINDEX.t
+ar.gz
+#7 0.431 fetch https://dl-c
+dn.alpinelinux.org/alpine/v
+3.21/community/x86_64/APKIN
+DEX.tar.gz
+#7 0.908 (1/3) Installing m
+usl-obstack (1.2.3-r2)
+#7 0.925 (2/3) Installing l
+ibucontext (1.3.2-r0)
+#7 0.943 (3/3) Installing g
+compat (1.1.0-r4)
+#7 0.978 OK: 10 MiB in 20 p
+ackages
+#7 DONE 1.1s
+
+#10 [deps 2/4] WORKDIR /app
+#10 DONE 0.0s
+
+#11 [deps 3/4] COPY package
+.json yarn.lock* package-lo
+ck.json* pnpm-lock.yaml* ./
+#11 DONE 0.1s
+
+#12 [deps 4/4] RUN   if [ -
+f yarn.lock ]; then yarn --
+frozen-lockfile;   elif [ -
+f package-lock.json ]; then
+ npm ci;   elif [ -f pnpm-l
+ock.yaml ]; then yarn globa
+l add pnpm && pnpm i --froz
+en-lockfile;   else echo "L
+ockfile not found." && exit
+ 1;   fi
+#12 1.004 npm warn EBADENGI
+NE Unsupported engine {
+#12 1.004 npm warn EBADENGI
+NE   package: 'next@16.1.4'
+,
+#12 1.004 npm warn EBADENGI
+NE   required: { node: '>=2
+0.9.0' },
+#12 1.004 npm warn EBADENGI
+NE   current: { node: 'v18.
+20.8', npm: '10.8.2' }
+#12 1.004 npm warn EBADENGI
+NE }
+#12 21.06 
+#12 21.06 added 358 package
+s, and audited 359 packages
+ in 21s
+#12 21.06 
+#12 21.06 142 packages are 
+looking for funding
+#12 21.06   run `npm fund` 
+for details
+#12 21.06 
+#12 21.06 found 0 vulnerabi
+lities
+#12 21.06 npm notice
+#12 21.06 npm notice New ma
+jor version of npm availabl
+e! 10.8.2 -> 11.7.0
+#12 21.06 npm notice Change
+log: https://github.com/npm
+/cli/releases/tag/v11.7.0
+#12 21.06 npm notice To upd
+ate run: npm install -g npm
+@11.7.0
+#12 21.06 npm notice
+#12 DONE 21.8s
+
+#13 [builder 2/5] COPY --fr
+om=deps /app/node_modules .
+/node_modules
+#13 DONE 6.4s
+
+#14 [builder 3/5] COPY . .
+#14 DONE 0.3s
+
+#15 [builder 4/5] RUN npx p
+risma generate
+#15 1.489 prisma:warn Prism
+a failed to detect the libs
+sl/openssl version to use, 
+and may not work as expecte
+d. Defaulting to "openssl-1
+.1.x".
+#15 1.489 Please manually i
+nstall OpenSSL and try inst
+alling Prisma again.
+#15 2.733 Environment varia
+bles loaded from .env
+#15 2.736 Prisma schema loa
+ded from prisma/schema.pris
+ma
+#15 2.752 prisma:warn Prism
+a failed to detect the libs
+sl/openssl version to use, 
+and may not work as expecte
+d. Defaulting to "openssl-1
+.1.x".
+#15 2.752 Please manually i
+nstall OpenSSL and try inst
+alling Prisma again.
+#15 3.276 
+#15 3.276 笨・Generated Prism
+a Client (v5.19.1) to ./nod
+e_modules/@prisma/client in
+ 96ms
+#15 3.276 
+#15 3.276 Start by importin
+g your Prisma Client (See: 
+http://pris.ly/d/importing-
+client)
+#15 3.276 
+#15 3.276 Tip: Need your da
+tabase queries to be 1000x 
+faster? Accelerate offers y
+ou that and more: https://p
+ris.ly/tip-2-accelerate
+#15 3.276 
+#15 3.481 npm notice
+#15 3.481 npm notice New ma
+jor version of npm availabl
+e! 10.8.2 -> 11.7.0
+#15 3.481 npm notice Change
+log: https://github.com/npm
+/cli/releases/tag/v11.7.0
+#15 3.481 npm notice To upd
+ate run: npm install -g npm
+@11.7.0
+#15 3.481 npm notice
+#15 DONE 3.5s
+
+#16 [builder 5/5] RUN npm r
+un build
+#16 0.833 
+#16 0.833 > fuel-maintenanc
+e-tracker@0.1.0 build
+#16 0.833 > next build
+#16 0.833 
+#16 1.000 You are using Nod
+e.js 18.20.8. For Next.js, 
+Node.js version ">=20.9.0" 
+is required.
+#16 ERROR: process "/bin/sh
+ -c npm run build" did not 
+complete successfully: exit
+ code: 1
+------
+ > [builder 5/5] RUN npm ru
+n build:
+0.833 
+0.833 > fuel-maintenance-tr
+acker@0.1.0 build
+0.833 > next build
+0.833 
+1.000 You are using Node.js
+ 18.20.8. For Next.js, Node
+.js version ">=20.9.0" is r
+equired.
+------
+
+ [33m5 warnings found (use
+ docker --debug to expand):
+[0m - LegacyKeyValueFormat
+: "ENV key=value" should be
+ used instead of legacy "EN
+V key value" format (line 4
+2)
+ - LegacyKeyValueFormat: "E
+NV key=value" should be use
+d instead of legacy "ENV ke
+y value" format (line 69)
+ - LegacyKeyValueFormat: "E
+NV key=value" should be use
+d instead of legacy "ENV ke
+y value" format (line 71)
+ - LegacyKeyValueFormat: "E
+NV key=value" should be use
+d instead of legacy "ENV ke
+y value" format (line 27)
+ - LegacyKeyValueFormat: "E
+NV key=value" should be use
+d instead of legacy "ENV ke
+y value" format (line 41)
+Dockerfile:35
+--------------------
+  33 |     RUN npx prisma g
+enerate
+  34 |     
+  35 | >>> RUN npm run buil
+d
+  36 |     
+  37 |     # Production ima
+ge, copy all the files and 
+run next
+--------------------
+ERROR: failed to build: fai
+led to solve: process "/bin
+/sh -c npm run build" did n
+ot complete successfully: e
+xit code: 1

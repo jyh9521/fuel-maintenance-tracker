@@ -1,6 +1,6 @@
 # Docker Deployment Guide
 
-[English](DEPLOY_EN.md) | [日本語](DEPLOY_JA.md) | [中文](DEPLOY.md)
+[中文](DEPLOY.md) | [日本語](DEPLOY_JA.md) | [English](DEPLOY_EN.md)
 
 This guide describes how to package your Fuel & Maintenance Tracker application and publish it to Docker Hub for deployment on your NAS or other servers.
 

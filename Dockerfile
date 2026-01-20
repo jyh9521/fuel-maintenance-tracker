@@ -1,4 +1,4 @@
-FROM node:18-alpine AS base
+FROM node:20-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -24,7 +24,13 @@ COPY . .
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
-ENV NEXT_TELEmetry_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1
+
+# Set a dummy DATABASE_URL for build time (Prisma needs it to generate client)
+ENV DATABASE_URL="file:./dev.db"
+
+# Generate Prisma Client
+RUN npx prisma generate
 
 RUN npm run build
 
@@ -54,7 +60,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # Copy Prisma schema and migrations if needed for runtime
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
-# COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
 
 USER nextjs
 

@@ -1,6 +1,6 @@
 # Docker デプロイメントガイド
 
-[English](DEPLOY_EN.md) | [日本語](DEPLOY_JA.md) | [中文](DEPLOY.md)
+[中文](DEPLOY.md) | [日本語](DEPLOY_JA.md) | [English](DEPLOY_EN.md)
 
 このガイドでは、Fuel & Maintenance Tracker アプリケーションをパッケージ化し、Docker Hub に公開して、NAS やその他のサーバーにデプロイする方法について説明します。
 
