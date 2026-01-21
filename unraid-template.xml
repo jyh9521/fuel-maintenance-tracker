@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Fuel-Maintenance-Tracker</Name>
+  <Repository>jyh9521/fuel-tracker</Repository>
+  <Registry>https://hub.docker.com/r/jyh9521/fuel-tracker</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/jyh9521/fuel-maintenance-tracker/issues</Support>
+  <Project>https://github.com/jyh9521/fuel-maintenance-tracker</Project>
+  <Overview>
+    Fuel &amp; Maintenance Tracker is a comprehensive vehicle management application designed to help you track fuel consumption, maintenance records, and service reminders for all your vehicles.
+    
+    Key Features:
+    - Track fuel fill-ups and calculate mileage/efficiency
+    - Log maintenance and service history
+    - Set up service reminders based on date or mileage
+    - Support for multiple vehicles
+    - Mobile-responsive design with PWA support
+  </Overview>
+  <Category>Tools:Utilities Productivity: Management</Category>
+  <WebUI>http://[IP]:[PORT:9521]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/jyh9521/fuel-maintenance-tracker/main/public/icon.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>
+    Fuel &amp; Maintenance Tracker is a modern web application for tracking vehicle expenses and maintenance.
+  </Description>
+  
+  <Config Name="WebUI Port" Target="9521" Default="9521" Mode="tcp" Description="Container Port: 9521" Type="Port" Display="always" Required="true" Mask="false">9521</Config>
+  
+  <Config Name="Appdata" Target="/app/prisma/db" Default="/mnt/user/appdata/fuel-maintenance-tracker" Mode="rw" Description="Location of the SQLite database." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/fuel-maintenance-tracker</Config>
+  
+  <Config Name="Database URL" Target="DATABASE_URL" Default="file:/app/prisma/db/dev.db" Description="Internal database connection string. Do not change unless you know what you are doing." Type="Variable" Display="advanced" Required="true" Mask="false">file:/app/prisma/db/dev.db</Config>
+</Container>
