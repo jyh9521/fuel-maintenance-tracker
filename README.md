@@ -11,10 +11,18 @@
 ## 📸 应用截图
 
 <p align="center">
-  <img src="public/screenshot1.png" width="30%" />
-  <img src="public/screenshot2.png" width="30%" />
-  <img src="public/screenshot3.png" width="30%" />
+  <img src="public/screenshot1.jpg" width="22%" />
+  <img src="public/screenshot2.jpg" width="22%" />
+  <img src="public/screenshot3.jpg" width="22%" />
+  <img src="public/screenshot4.jpg" width="22%" />
 </p>
+
+## 📱 添加到手机主屏幕
+
+您可以像原生 App 一样在手机上使用本应用：
+
+*   **Android (Chrome)**: 点击右上角菜单 (⋮) -> 选择 **“添加到主屏幕”**。
+*   **iOS (Safari)**: 点击底部 **分享** 按钮 (方框带箭头) -> 向下滑动选择 **“添加到主屏幕”**。
 
 ## ✨ 主要功能
 

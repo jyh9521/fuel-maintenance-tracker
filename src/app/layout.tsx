@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: '/icon.png',
-    apple: '/icon.png', // For iOS Home Screen
+    apple: '/icon.png', // 适用于 iOS 主屏幕
   },
   appleWebApp: {
     capable: true,

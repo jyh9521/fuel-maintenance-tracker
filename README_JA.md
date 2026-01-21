@@ -11,10 +11,18 @@
 ## 📸 アプリのスクリーンショット
 
 <p align="center">
-  <img src="public/screenshot1.png" width="30%" />
-  <img src="public/screenshot2.png" width="30%" />
-  <img src="public/screenshot3.png" width="30%" />
+  <img src="public/screenshot1.jpg" width="22%" />
+  <img src="public/screenshot2.jpg" width="22%" />
+  <img src="public/screenshot3.jpg" width="22%" />
+  <img src="public/screenshot4.jpg" width="22%" />
 </p>
+
+## 📱 ホーム画面に追加
+
+このアプリはスマホにインストールして、ネイティブアプリのように使用できます：
+
+*   **Android (Chrome)**: メニューボタン (⋮) をタップ -> **「ホーム画面に追加」**を選択。
+*   **iOS (Safari)**: **共有**ボタン (四角から矢印) をタップ -> スクロールして**「ホーム画面に追加」**を選択。
 
 ## ✨ 主な機能
 

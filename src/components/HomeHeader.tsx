@@ -14,7 +14,7 @@ export function HomeHeader() {
                 </h1>
                 <p className="text-muted">{t('header.subtitle')}</p>
             </div>
-            {/* LanguageSwitcher moved to global layout */}
+            {/* 语言切换器已移动到全局布局 */}
         </header>
     );
 }

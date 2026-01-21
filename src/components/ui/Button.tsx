@@ -9,7 +9,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 // 通用按钮组件
 export function Button({ variant = 'primary', className = '', ...props }: ButtonProps) {
     const baseClass = 'btn';
-    // 根据变体选择央视
+    // 根据变体选择样式
     const variantClass =
         variant === 'primary' ? 'btn-primary' :
             variant === 'secondary' ? 'btn-secondary' :

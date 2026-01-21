@@ -7,8 +7,8 @@ type Props = {
 };
 
 export default async function VehiclePage({ params }: Props) {
-    // In Next 15 params is a promise, in 13/14 it's not. 
-    // Code assumes standard usage. If error, we await params.
+    // 在 Next 15 中 params 是一个 promise，在 13/14 中不是。
+    // 代码假设标准用法。如果出错，我们要 await params。
     const { id } = await params;
 
     const vehicle = await prisma.vehicle.findUnique({

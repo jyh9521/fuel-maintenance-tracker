@@ -10,7 +10,7 @@ type Vehicle = {
     id: string;
     name: string;
     type: string;
-    // subtype: string; // Removed
+    // subtype: string; // 已移除
     odometer: number;
 };
 

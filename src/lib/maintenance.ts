@@ -16,7 +16,7 @@ export type PredictionResult = {
 export function predictMaintenance(
     currentOdometer: number,
     config: MaintenanceConfig,
-    dailyAverageKm: number = 20 // 默认值 fallback
+    dailyAverageKm: number = 20 // 默认值 (后备)
 ): PredictionResult {
     const nextServiceKm = config.lastServiceKm + config.intervalKm;
     const kmRemaining = nextServiceKm - currentOdometer;

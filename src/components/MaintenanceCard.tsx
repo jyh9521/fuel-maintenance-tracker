@@ -115,9 +115,9 @@ export function MaintenanceCard({ vehicle, refreshTrigger }: MaintenanceCardProp
                                         body: JSON.stringify({ maintenanceConfig: null })
                                     });
                                     if (res.ok) {
-                                        setConfig(null); // Clear local config to hide card or show empty state
+                                        setConfig(null); // 清除本地配置以隐藏卡片或显示空状态
                                         setEditing(false);
-                                        window.location.reload(); // Refresh to reflect changes cleanly
+                                        window.location.reload(); // 刷新以干净地反映更改
                                     }
                                 } catch (e) { console.error(e); }
                                 finally { setLoading(false); }

@@ -26,12 +26,12 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
         if (odometer !== undefined) updateData.odometer = odometer;
 
         if (maintenanceConfig === null) {
-            // Explicitly delete maintenance config
+            // 显式删除保养配置
             try {
-                // We use try-catch because if it doesn't exist, delete might fail or we should use delete: true in update
-                // But updateData is for vehicle update.
+                // 我们使用 try-catch，因为如果它不存在，delete 可能会失败，或者我们需要在 update 中使用 delete: true
+                // 但 updateData 是用于车辆更新的
                 updateData.maintenanceConfig = { delete: true };
-            } catch (e) { /* ignore if already deleted */ }
+            } catch (e) { /* 如果已删除则忽略 */ }
         } else if (maintenanceConfig) {
             updateData.maintenanceConfig = {
                 upsert: {

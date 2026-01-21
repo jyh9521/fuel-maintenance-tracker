@@ -11,10 +11,18 @@ A modern web application for managing your garage, tracking fuel consumption, an
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="public/screenshot1.png" width="30%" />
-  <img src="public/screenshot2.png" width="30%" />
-  <img src="public/screenshot3.png" width="30%" />
+  <img src="public/screenshot1.jpg" width="22%" />
+  <img src="public/screenshot2.jpg" width="22%" />
+  <img src="public/screenshot3.jpg" width="22%" />
+  <img src="public/screenshot4.jpg" width="22%" />
 </p>
+
+## 📱 Add to Home Screen
+
+You can install this app on your phone and use it like a native app:
+
+*   **Android (Chrome)**: Tap the menu button (⋮) -> Select **"Add to Home Screen"**.
+*   **iOS (Safari)**: Tap the **Share** button (box with arrow) -> Scroll down and select **"Add to Home Screen"**.
 
 ## ✨ Key Features
 
