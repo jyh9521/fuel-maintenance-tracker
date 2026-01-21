@@ -10,7 +10,7 @@ type Vehicle = {
     id: string;
     name: string;
     type: string;
-    subtype: string;
+    // subtype: string; // Removed
     odometer: number;
 };
 
@@ -75,7 +75,7 @@ export function VehicleList() {
                                 <div>
                                     <h3 className="text-lg font-bold text-white">{vehicle.name}</h3>
                                     <span className="text-xs px-2 py-1 rounded bg-blue-500/20 text-blue-300">
-                                        {t(`vehicle.subtype.${vehicle.subtype.toLowerCase()}`)}
+                                        {t(`vehicle.type.${vehicle.type}`)}
                                     </span>
                                 </div>
                                 {/* 这里可以根据类型放置图标 */}

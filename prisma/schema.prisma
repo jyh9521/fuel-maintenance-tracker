@@ -2,7 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
 datasource db {
@@ -13,8 +14,7 @@ datasource db {
 model Vehicle {
   id        String   @id @default(uuid())
   name      String
-  type      String   // 2wheel, 3wheel, 4wheel
-  subtype   String?  // Sedan, SUV, Scooter, etc.
+  type      String   // car, motorcycle
   odometer  Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

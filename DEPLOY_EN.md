@@ -111,7 +111,7 @@ docker run -d \
 
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| `DATABASE_URL` | SQLite database file path | `file:./dev.db` | Yes |
+| `DATABASE_URL` | SQLite database file path | `file:/app/prisma/db/dev.db` | No |
 | `PORT` | Application port | `9521` | No |
 | `NODE_ENV` | Runtime environment | `production` | No |
 
@@ -124,6 +124,9 @@ docker run -d \
 ```
 
 This saves the SQLite database file to the host's `./data` directory, ensuring data survives container restarts.
+
+> [!WARNING]
+> **Automatic Migrations**: The container automatically checks and applies database schema updates on startup. If a new version includes destructive schema changes (e.g., removing fields), **the system will automatically apply these changes**. Please backup your database files regularly.
 
 **Recommendation**: Regularly backup the database file in the `./data` directory.
 

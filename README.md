@@ -2,6 +2,10 @@
 
 [中文](README.md) | [日本語](README_JA.md) | [English](README_EN.md)
 
+<p align="center">
+  <img src="public/fuel-tracker.jpg" width="100%" />
+</p>
+
 一个现代化的 Web 应用程序，用于管理您的车辆、追踪燃油消耗以及预测保养需求。
 
 ## 📸 应用截图

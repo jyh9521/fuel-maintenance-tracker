@@ -3,6 +3,9 @@ export type GasStation = {
     lat: number;
     lon: number;
     name?: string;
+    branch?: string;
+    brand?: string;
+    address?: string;
     distance?: number; // 米
 };
 
@@ -24,13 +27,27 @@ export async function fetchGasStations(lat: number, lon: number, radiusMeters: n
         if (!res.ok) throw new Error('Overpass API error');
         const data = await res.json();
 
-        return data.elements.map((el: any) => ({
-            id: el.id,
-            lat: el.lat || el.center.lat,
-            lon: el.lon || el.center.lon,
-            name: el.tags?.name || 'Unknown Station',
-            // 稍后计算距离或使用 Turf.js。目前使用简单的哈弗辛公式？
-        }));
+        return data.elements.map((el: any) => {
+            const tags = el.tags || {};
+            // 尝试构建更详细的名字
+            let displayName = tags.name || 'Unknown Station';
+            if (tags.branch) {
+                displayName += ` (${tags.branch})`;
+            } else if (tags.brand && tags.brand !== tags.name) {
+                // 如果没有分店名，但有品牌且与名字不同（例如名字是 generic 的 "Gas Station"）
+                // 这种情况较少，通常 OSM name 就是品牌
+            }
+            
+            return {
+                id: el.id,
+                lat: el.lat || el.center.lat,
+                lon: el.lon || el.center.lon,
+                name: displayName,
+                branch: tags.branch,
+                brand: tags.brand,
+                address: tags['addr:street'] ? `${tags['addr:street']} ${tags['addr:housenumber'] || ''}` : undefined,
+            };
+        });
     } catch (e) {
         console.error(e);
         return [];

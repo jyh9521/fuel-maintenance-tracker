@@ -10,3 +10,4 @@ README.md
 build-log.txt
 build-detailed.log
 Dockerfile.simple
+.env

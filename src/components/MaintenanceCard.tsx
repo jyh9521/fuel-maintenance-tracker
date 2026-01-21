@@ -104,7 +104,25 @@ export function MaintenanceCard({ vehicle, refreshTrigger }: MaintenanceCardProp
                         <label className="block text-sm text-muted mb-1">{t('maintenance.settings.last_date')}</label>
                         <input className="input" type="date" value={editForm.lastServiceDate} onChange={e => setEditForm({ ...editForm, lastServiceDate: e.target.value })} />
                     </div>
-                    <div className="flex justify-end gap-2">
+                    <div className="flex justify-end gap-2 items-center">
+                        <Button variant="ghost" className="text-red-400 hover:bg-red-900/20 mr-auto" onClick={async () => {
+                            if (confirm(t('common.confirm_delete'))) {
+                                setLoading(true);
+                                try {
+                                    const res = await fetch(`/api/vehicles/${vehicle.id}`, {
+                                        method: 'PATCH',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify({ maintenanceConfig: null })
+                                    });
+                                    if (res.ok) {
+                                        setConfig(null); // Clear local config to hide card or show empty state
+                                        setEditing(false);
+                                        window.location.reload(); // Refresh to reflect changes cleanly
+                                    }
+                                } catch (e) { console.error(e); }
+                                finally { setLoading(false); }
+                            }
+                        }}>{t('common.delete')}</Button>
                         <Button variant="ghost" onClick={() => setEditing(false)}>{t('common.cancel')}</Button>
                         <Button onClick={handleSave} disabled={loading}>{loading ? t('common.loading') : t('common.save')}</Button>
                     </div>

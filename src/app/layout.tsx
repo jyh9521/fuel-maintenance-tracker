@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "Vehicle Tracker",
   description: "Track fuel and maintenance",
   manifest: "/manifest.json",
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png', // For iOS Home Screen
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

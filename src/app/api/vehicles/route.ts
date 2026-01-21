@@ -21,7 +21,7 @@ const POST = async (request: Request) => {
     try {
         const body = await request.json();
         console.log('Received payload:', body); // 调试日志
-        const { name, type, subtype, odometer } = body;
+        const { name, type, odometer } = body;
 
         // 验证
         if (!name || !odometer) {
@@ -37,7 +37,6 @@ const POST = async (request: Request) => {
             data: {
                 name,
                 type,
-                subtype,
                 odometer: odometerInt,
                 maintenanceConfig: {
                     create: {

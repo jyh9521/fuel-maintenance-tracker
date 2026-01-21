@@ -2,6 +2,10 @@
 
 [中文](README.md) | [日本語](README_JA.md) | [English](README_EN.md)
 
+<p align="center">
+  <img src="public/fuel-tracker.jpg" width="100%" />
+</p>
+
 A modern web application for managing your garage, tracking fuel consumption, and predicting maintenance needs.
 
 ## 📸 Screenshots

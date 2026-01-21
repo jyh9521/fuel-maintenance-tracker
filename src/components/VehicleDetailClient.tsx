@@ -12,7 +12,6 @@ type Vehicle = {
     id: string;
     name: string;
     type: string;
-    subtype: string | null;
     odometer: number;
     maintenanceConfig?: any;
 };
@@ -31,15 +30,28 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
                     </Button>
                     <h1 className="text-3xl font-bold">{vehicle.name}</h1>
                     <p className="text-muted">
-                        {vehicle.subtype ? t(`vehicle.subtype.${vehicle.subtype.toLowerCase()}`) : vehicle.type} • {vehicle.odometer} km
+                        {t(`vehicle.type.${vehicle.type}`)} • {vehicle.odometer} km
                     </p>
                 </div>
                 <div className="flex gap-2">
+                    <Button variant="ghost" className="text-red-400 hover:text-red-300 hover:bg-red-900/20" onClick={async () => {
+                        if (confirm(t('common.confirm_delete'))) {
+                            try {
+                                const res = await fetch(`/api/vehicles/${vehicle.id}`, { method: 'DELETE' });
+                                if (res.ok) router.push('/');
+                            } catch (e) {
+                                console.error(e);
+                                alert('Failed to delete');
+                            }
+                        }
+                    }}>
+                        {t('common.delete')}
+                    </Button>
                     <Button onClick={() => router.push(`/vehicle/${vehicle.id}/add-fuel`)}>
                         {t('add.fuel')}
                     </Button>
                 </div>
-            </header>
+            </header >
 
             <MaintenanceCard vehicle={vehicle} refreshTrigger={refreshTrigger} />
 
@@ -49,6 +61,6 @@ export function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
                 <h2 className="text-xl font-bold mb-4 mt-8">{t('fuel.history')}</h2>
                 <FuelList vehicleId={vehicle.id} refreshTrigger={refreshTrigger} />
             </section>
-        </div>
+        </div >
     );
 }

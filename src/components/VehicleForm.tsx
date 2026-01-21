@@ -9,10 +9,13 @@ type VehicleFormProps = {
 
 export function VehicleForm({ onSuccess, onCancel }: VehicleFormProps) {
     const { t } = useI18n();
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<{
+        name: string;
+        type: string;
+        odometer: string;
+    }>({
         name: '',
-        type: '4wheel',
-        subtype: 'Sedan',
+        type: 'car',
         odometer: '',
     });
 
@@ -38,16 +41,6 @@ export function VehicleForm({ onSuccess, onCancel }: VehicleFormProps) {
         }
     };
 
-    const handleTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const newType = e.target.value;
-        let defaultSubtype = '';
-        if (newType === '4wheel') defaultSubtype = 'Sedan';
-        else if (newType === '2wheel') defaultSubtype = 'Scooter';
-        else if (newType === '3wheel') defaultSubtype = 'Tricycle';
-
-        setFormData({ ...formData, type: newType, subtype: defaultSubtype });
-    }
-
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -61,47 +54,16 @@ export function VehicleForm({ onSuccess, onCancel }: VehicleFormProps) {
                 />
             </div>
 
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 gap-2">
                 <div>
                     <label className="block text-sm text-muted mb-1">{t('vehicle.type')}</label>
                     <select
                         className="input"
                         value={formData.type}
-                        onChange={handleTypeChange}
+                        onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                     >
-                        <option value="4wheel">{t('vehicle.type.4wheel')}</option>
-                        <option value="2wheel">{t('vehicle.type.2wheel')}</option>
-                        <option value="3wheel">{t('vehicle.type.3wheel')}</option>
-                    </select>
-                </div>
-                <div>
-                    <label className="block text-sm text-muted mb-1">{t('vehicle.subtype')}</label>
-                    <select
-                        className="input"
-                        value={formData.subtype}
-                        onChange={(e) => setFormData({ ...formData, subtype: e.target.value })}
-                    >
-                        {formData.type === '4wheel' && (
-                            <>
-                                <option value="Sedan">{t('vehicle.subtype.sedan')}</option>
-                                <option value="SUV">{t('vehicle.subtype.suv')}</option>
-                                <option value="Hatchback">{t('vehicle.subtype.hatchback')}</option>
-                                <option value="Truck">{t('vehicle.subtype.truck')}</option>
-                            </>
-                        )}
-                        {formData.type === '2wheel' && (
-                            <>
-                                <option value="Scooter">{t('vehicle.subtype.scooter')}</option>
-                                <option value="Sport">{t('vehicle.subtype.sport')}</option>
-                                <option value="Cruiser">{t('vehicle.subtype.cruiser')}</option>
-                            </>
-                        )}
-                        {formData.type === '3wheel' && (
-                            <>
-                                <option value="Tricycle">{t('vehicle.subtype.tricycle')}</option>
-                                <option value="Sidecar">{t('vehicle.subtype.sidecar')}</option>
-                            </>
-                        )}
+                        <option value="car">{t('vehicle.type.car')}</option>
+                        <option value="motorcycle">{t('vehicle.type.motorcycle')}</option>
                     </select>
                 </div>
             </div>

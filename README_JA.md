@@ -2,6 +2,10 @@
 
 [中文](README.md) | [日本語](README_JA.md) | [English](README_EN.md)
 
+<p align="center">
+  <img src="public/fuel-tracker.jpg" width="100%" />
+</p>
+
 車両の管理、燃費の追跡、およびメンテナンス時期の予測を行うためのモダンなWebアプリケーションです。
 
 ## 📸 アプリのスクリーンショット

@@ -25,7 +25,14 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
         const updateData: any = {};
         if (odometer !== undefined) updateData.odometer = odometer;
 
-        if (maintenanceConfig) {
+        if (maintenanceConfig === null) {
+            // Explicitly delete maintenance config
+            try {
+                // We use try-catch because if it doesn't exist, delete might fail or we should use delete: true in update
+                // But updateData is for vehicle update.
+                updateData.maintenanceConfig = { delete: true };
+            } catch (e) { /* ignore if already deleted */ }
+        } else if (maintenanceConfig) {
             updateData.maintenanceConfig = {
                 upsert: {
                     create: {
@@ -51,5 +58,17 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
         return NextResponse.json(vehicle);
     } catch (_) {
         return NextResponse.json({ error: 'Failed to update' }, { status: 500 });
+    }
+}
+
+export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    try {
+        await prisma.vehicle.delete({
+            where: { id },
+        });
+        return NextResponse.json({ success: true });
+    } catch (e) {
+        return NextResponse.json({ error: 'Failed to delete' }, { status: 500 });
     }
 }
